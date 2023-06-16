@@ -6,12 +6,38 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:23 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:35:37 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/16 13:51:32 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+/**
+ * @brief    Calculates the Mandelbrot fractal for one pixel.
+ *
+ * First, we translate the coordinates of the pixel to the center of the
+ * window, because the Mandelbrot fractal's origin is the center not the
+ * top left corner of the window.
+ *
+ * The z variables are set to 0, the beginning of the suite.
+ *
+ * The c constants are set to the coordinates of the pixel.
+ *
+ * For performance reasons, we use the (x * x) calculation instead of the
+ * pow(x, 2) function.
+ *
+ * The exit conditions of the loop are the following:
+ * - The absolute value of z is greater than 7, then we can assure
+ *   that the suite will diverge to infinity.
+ * - The number of iterations is too high, then we can assure that
+ *   the suite will stay stuck in an infinite loop.
+ *
+ * If the the suite diverges, we color it and multiply the color by the
+ * number of iterations to make the mathematical depths more clear to the
+ * eye.
+ *
+ * @param    fractal
+ */
 void	calculate_mandelbrot(t_fractal *fractal)
 {
 	int		x;
@@ -24,8 +50,8 @@ void	calculate_mandelbrot(t_fractal *fractal)
 	i = 0;
 	fractal->zx = 0.0;
 	fractal->zy = 0.0;
-	fractal->cx = x / fractal->zoom + fractal->offset_x;
-	fractal->cy = y / fractal->zoom + fractal->offset_y;
+	fractal->cx = (x / fractal->zoom) + fractal->offset_x;
+	fractal->cy = (y / fractal->zoom) + fractal->offset_y;
 	while (fractal->zx * fractal->zx + fractal->zy * fractal->zy < 7.
 		&& ++i < MAX_ITERATIONS)
 	{

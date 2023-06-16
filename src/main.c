@@ -6,12 +6,19 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 22:55:04 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:37:24 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/16 13:54:07 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/fractol.h"
 
+/**
+ * @brief    Iterates through the pixels of the window and calls the
+ * appropriate function to draw the fractal.
+ *
+ * @param    fractal   The fractal structure.
+ * @param    query     The name of the fractal to draw.
+ */
 void	draw_fractal(t_fractal *fractal, char *query)
 {
 	while (fractal->x < SIZE)
