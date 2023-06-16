@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:23 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:51:32 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/16 14:04:44 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,14 @@
  */
 void	calculate_mandelbrot(t_fractal *fractal)
 {
-	int		x;
-	int		y;
 	int		i;
 	double	x_temp;
 
-	x = fractal->translated_x;
-	y = fractal->translated_y;
 	i = 0;
 	fractal->zx = 0.0;
 	fractal->zy = 0.0;
-	fractal->cx = (x / fractal->zoom) + fractal->offset_x;
-	fractal->cy = (y / fractal->zoom) + fractal->offset_y;
+	fractal->cx = (fractal->translated_x / fractal->zoom) + fractal->offset_x;
+	fractal->cy = (fractal->translated_y / fractal->zoom) + fractal->offset_y;
 	while (fractal->zx * fractal->zx + fractal->zy * fractal->zy < 7.
 		&& ++i < MAX_ITERATIONS)
 	{
