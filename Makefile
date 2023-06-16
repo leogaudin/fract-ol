@@ -19,8 +19,6 @@ MLX = $(MLX_PATH)/libmlx.a
 
 NAME = fractal_generator
 
-.PHONY: all clean fclean re
-
 all: $(NAME)
 
 $(NAME): $(OBJ_FILES) $(LIBFT) $(MLX)
@@ -55,6 +53,6 @@ fclean: clean
 	@rm $(NAME)
 	@echo "$(NAME): $(RED)$(NAME) was deleted$(RESET)"
 
-re:
-	@$(MAKE) fclean
-	@$(MAKE) all
+re: fclean all
+
+.PHONY: all clean fclean re

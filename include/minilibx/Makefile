@@ -11,13 +11,13 @@ CFLAGS+=-O2 -w
 all: $(NOM)
 
 $(NOM):	$(OBJ)
-	@ar -r $(NOM) $(OBJ) > /dev/null
-	@ranlib $(NOM) > /dev/null
+	@ar -r $(NOM) $(OBJ)
+	@ranlib $(NOM)
 	@echo "$(NOM): $(GREEN)$(NOM) was created$(RESET)"
 
 clean:
-	@rm -f $(NOM) $(OBJ) *~ > /dev/null
-	@rm -f mlx_app > /dev/null
+	@rm -f $(NOM) $(OBJ) *~
+	@rm -f mlx_app
 	@echo "$(NOM): $(RED)$(NOM) was deleted$(RESET)"
 
 re: clean all
