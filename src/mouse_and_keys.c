@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 18:11:08 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 14:06:46 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 14:19:09 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,21 +37,21 @@ void	zoom(t_fractal *fractal, int x, int y, int zoom)
 		return ;
 }
 
-int	key_hook(int keycode, t_fractal *fractal)
+int	key_hook(int key_code, t_fractal *fractal)
 {
-	if (keycode == 53)
+	if (key_code == 53)
 		exit(1);
-	else if (keycode == LEFT)
+	else if (key_code == LEFT)
 		fractal->offset_x -= 42 / fractal->zoom;
-	else if (keycode == RIGHT)
+	else if (key_code == RIGHT)
 		fractal->offset_x += 42 / fractal->zoom;
-	else if (keycode == UP)
-		fractal->offset_y += 42 / fractal->zoom;
-	else if (keycode == DOWN)
+	else if (key_code == UP)
 		fractal->offset_y -= 42 / fractal->zoom;
-	else if (keycode == R)
+	else if (key_code == DOWN)
+		fractal->offset_y += 42 / fractal->zoom;
+	else if (key_code == R)
 		init_fractal(fractal);
-	else if (keycode == C)
+	else if (key_code == C)
 		fractal->color += (255 * 255 * 255) / 100;
 	draw_fractal(fractal, fractal->name);
 	return (0);
@@ -66,3 +66,4 @@ int	mouse_hook(int mouse_code, int x, int y, t_fractal *fractal)
 	draw_fractal(fractal, fractal->name);
 	return (0);
 }
+
