@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:46:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 14:09:59 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 14:19:15 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ typedef struct s_fractal
 
 // utils.c
 void		put_color_to_pixel(t_fractal *fractal, int x, int y, int colour);
+int			exit_fractal(t_fractal *fractal);
 
 // init.c
 void		init_fractal(t_fractal *fractal);
@@ -73,7 +74,7 @@ void		calculate_julia(t_fractal *fractal);
 int			draw_fractal(t_fractal *fractal, char *query);
 
 // mouse_and_keys.c
-int			key_hook(int keycode, t_fractal *fractal);
+int			key_hook(int key_code, t_fractal *fractal);
 int			mouse_hook(int mouse_code, int x, int y, t_fractal *fractal);
 
 #endif
