@@ -6,15 +6,18 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:46:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:30:16 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:37:17 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 
+# include "libft/libft.h"
+# include "minilibx/mlx.h"
+# include <math.h>
+
 # define SIZE 700
-# define MAX_ITERATIONS 142
 
 // KEYCODES
 # define ESC 53
@@ -55,10 +58,6 @@ typedef struct s_fractal
 	char	*name;
 	int		max_iterations;
 }			t_fractal;
-
-# include "libft/libft.h"
-# include "minilibx/mlx.h"
-# include <math.h>
 
 // utils.c
 void		put_color_to_pixel(t_fractal *fractal, int x, int y, int colour);

@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:37 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 17:58:49 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:35:55 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int	exit_fractal(t_fractal *fractal)
 	exit(1);
 	return (0);
 }
+
 /**
  * @brief    Generates a random double between -1.5 and 1.5.
  *

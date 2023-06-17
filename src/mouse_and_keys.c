@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 18:11:08 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:04:16 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:35:46 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	zoom(t_fractal *fractal, int x, int y, int zoom)
 	else
 		return ;
 }
+
 /**
  * @brief    Sets the constants of Julia to random values.
  *
@@ -100,6 +101,7 @@ int	key_hook(int key_code, t_fractal *fractal)
 	draw_fractal(fractal, fractal->name, cx, cy);
 	return (0);
 }
+
 /**
  * @brief    The handler for mouse events.
  * 				SCROLL_UP: zoom in.

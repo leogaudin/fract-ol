@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 22:55:04 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:29:37 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:36:32 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	draw_fractal(t_fractal *fractal, char *query, double cx, double cy)
 				calculate_burning_ship(fractal);
 			else
 			{
-				ft_putendl_fd("Available fractals: mandelbrot, julia, burningship", 1);
+				ft_putendl_fd("Available fractals: mandel, julia, ship", 1);
 				exit_fractal(fractal);
 			}
 			fractal->y++;
@@ -43,8 +43,8 @@ int	draw_fractal(t_fractal *fractal, char *query, double cx, double cy)
 		fractal->x++;
 		fractal->y = 0;
 	}
-	mlx_put_image_to_window(fractal->mlx, fractal->window,
-			fractal->image, 0, 0);
+	mlx_put_image_to_window(fractal->mlx, fractal->window, fractal->image, 0,
+		0);
 	return (0);
 }
 

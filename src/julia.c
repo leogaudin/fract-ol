@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:55:52 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:31:13 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:36:42 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,5 @@ void	calculate_julia(t_fractal *fractal, double cx, double cy)
 		put_color_to_pixel(fractal, fractal->x, fractal->y, 0x000000);
 	else
 		put_color_to_pixel(fractal, fractal->x, fractal->y, (fractal->color * (i
-						% 255)));
+					% 255)));
 }
