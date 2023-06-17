@@ -1,6 +1,6 @@
 <div align="center">
 	<h1>🌌 fract-ol</h1>
-	<img src="assets/banner.png">
+	<img src="assets/banner.webp">
 	<p><b>The <code>fract-ol</code> project from the 42 School is one of the three "beginner" graphical projects of the cursus. It teaches you about manipulating a low-level graphic library, advanced math, and more.</b></p>
 	<p><em>⚠️ As mentioned in the rules of 42, do not copy and paste this code without thinking, the following README provides enough explanations and resources for you to go on your own journey with the awful MiniLibX ❤️</em></p>
 	<a href="https://wakatime.com/badge/user/db0e5671-cec5-4e7b-9d41-19a881e67f7d/project/a74b4852-2740-4faa-8753-9239f87e3cdc">
@@ -18,22 +18,22 @@
 
 ## 📖 Table of Contents
 <!--ts-->
-* [⚙️ Usage](#⚙️-usage)
-	* [🕹 Controls](#🕹-controls)
-* [🤔 How to do Fract-ol?](#🤔-how-to-do-fract-ol)
-	* [🤓 The math behind fractals](#🤓-the-math-behind-fractals)
-	* [👨🏻‍💻 From math to code](#👨🏻‍💻-from-math-to-code)
-* [🛠️ Main functions](#🛠️-main-functions)
+* [⚙️ Usage](#usage)
+	* [🕹 Controls](#controls)
+* [🤔 How to do Fract-ol?](#how-to-do-fract-ol)
+	* [🤓 The math behind fractals](#the-math-behind-fractals)
+	* [👨🏻‍💻 From math to code](#from-math-to-code)
+* [🛠️ Main functions](#main-functions)
 	* [`draw_fractal`](#draw_fractal)
 	* [`calculate_mandelbrot`](#calculate_mandelbrot)
-* [🌌 Demonstrations](#🌌-demonstrations)
-	* [🍑 Mandelbrot](#🍑-mandelbrot)
-	* [👩🏼 Julia](#👩🏼-julia)
-	* [🔥 Burning Ship](#🔥-burning-ship)
-* [🙇🏻 Resources and Credits](#🙇🏻-resources-and-credits)
+* [🌌 Demonstrations](#demonstrations)
+	* [🍑 Mandelbrot](#mandelbrot)
+	* [👩🏼 Julia](#julia)
+	* [🔥 Burning Ship](#burning-ship)
+* [🙇🏻 Resources and Credits](#resources-and-credits)
 <!--te-->
 
-## ⚙️ Usage
+## Usage
 
 * **Clone** the repository
 
@@ -55,7 +55,7 @@
 
 > Available commands: `mandel`, `julia`, `ship`
 
-### 🕹 Controls
+### Controls
 
 The program supports the following controls:
 <table align="center">
@@ -90,9 +90,9 @@ The program supports the following controls:
 >
 > 🐢 The deeper the zoom, the more iterations are needed to render the fractal, the slower the program.
 
-## 🤔 How to do Fract-ol?
+## How to do Fract-ol?
 
-### 🤓 The math behind fractals
+### The math behind fractals
 
 Fractals are formed by mathematical suites.
 
@@ -106,7 +106,7 @@ Fractals are based on complex numbers (i.e. numbers with a real and imaginary pa
 
 There is a great video by [DIMENSION CODE](https://www.youtube.com/@DIMENSIONCODE) explaining the concept of fractals and how to generate them here:
 
-|[![Comment Générer des Fractales ? ❄️](https://img.youtube.com/vi/wUlVFYJIUNA/maxresdefault.jpg)](https://youtu.be/wUlVFYJIUNA)|
+|[![Comment Générer des Fractales ? ❄️](assets/maxresdefault.webp)](https://youtu.be/wUlVFYJIUNA)|
 |:-------:|
 | **Comment Générer des Fractales ? ❄️** |
 | *🇫🇷 French only*|
@@ -123,13 +123,13 @@ The video is ≈ 20 minutes long, but the part that we need to get started can b
 
 * The pixels of the window can be colored depending on whether the complex number they represent converges or diverges.
 
-* If we paint every pixel of the window in ![black](https://placehold.co/10x10/000/000.png) if the complex number they represent converges or ![white](https://placehold.co/15x15/ffffff/ffffff.png) if it diverges, we can see it already generates a fractal:
+* If we paint every pixel of the window in ![black](assets/000000.webp) if the complex number they represent converges or ![white](assets/ffffff.webp) if it diverges, we can see it already generates a fractal:
 
-	|![Example](assets/orthonormal.png)|
+	|![Example](assets/orthonormal.webp)|
 	|:-------:|
 	| *Screenshot from the video* |
 
-### 👨🏻‍💻 From math to code
+### From math to code
 
 1. Setup the MiniLibX library.
 	* You can find good resources on how to do this [here](https://qst0.github.io/ft_libgfx/man_mlx.html).
@@ -138,11 +138,11 @@ The video is ≈ 20 minutes long, but the part that we need to get started can b
 	* *See [`draw_fractal`](#draw_fractal)*.
 4. For every pixel, calculate the complex number it represents and put it into the suite.
 	* *See [`calculate_mandelbrot`](#calculate_mandelbrot) for example*.
-5. If the suite diverges, color the pixel in ![white](https://placehold.co/15x15/ffffff/ffffff.png).
-6. If the suite converges, color the pixel in ![black](https://placehold.co/10x10/000/000.png).
+5. If the suite diverges, color the pixel in ![white](assets/ffffff.webp).
+6. If the suite converges, color the pixel in ![black](assets/000000.webp).
 
 
-## 🛠️ Main functions
+## Main functions
 
 ### `draw_fractal`
 
@@ -172,31 +172,31 @@ void calculate_mandelbrot(t_fractal *fractal)
 * If the the suite diverges, we color it and multiply the color by the number of iterations to make the mathematical depths more clear to the
 eye.
 
-***🎉 Fun fact**: the British Standard subtitle color, ![#FCBE11](https://placehold.co/15x15/FCBE11/FCBE11.png) `#FCBE11` gives some pretty cool psychedelic renders when multiplied by the number of iterations*
+***🎉 Fun fact**: the British Standard subtitle color, ![#FCBE11](assets/fcbe11.webp) `#FCBE11` gives some pretty cool psychedelic renders when multiplied by the number of iterations*
 
 > `calculate_julia` and `calculate_burning_ship` are very similar to `calculate_mandelbrot`, but with different equations.
 
-## 🌌 Demonstrations
+## Demonstrations
 
-### 🍑 Mandelbrot
+### Mandelbrot
 
-|![Mandelbrot](assets/mandelbrot.png)|
+|![Mandelbrot](assets/mandelbrot.webp)|
 |:-------:|
 | $z_{n+1} = z_n^2 + c$ |
 
-### 👩🏼 Julia
+### Julia
 
-|![Julia](assets/julia.png)|
+|![Julia](assets/julia.webp)|
 |:-------:|
-| $c\_real = -0.745429$ and $c\_imaginary = 0.05$ |
+| $creal = -0.745429$ and $cimaginary = 0.05$ |
 
-### 🔥 Burning Ship
+### Burning Ship
 
-|![Burning Ship](assets/burning_ship.png)|
+|![Burning Ship](assets/burning_ship.webp)|
 |:-------:|
 | $z=abs(z)^2+c$ |
 
-## 🙇🏻 Resources and Credits
+## Resources and Credits
 
 *The understanding of the concept of fractals and the implementation of the program was done with the help of the following resources.*
 
