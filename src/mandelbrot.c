@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:23 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:36:46 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 20:20:58 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 /**
  * @brief    Calculates the Mandelbrot fractal for one pixel.
- *
- * First, we translate the coordinates of the pixel to the center of the
- * window, because the Mandelbrot fractal's origin is the center not the
- * top left corner of the window.
  *
  * The z variables are set to 0, the beginning of the suite.
  *
