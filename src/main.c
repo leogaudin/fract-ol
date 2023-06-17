@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 22:55:04 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 14:24:25 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:29:37 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
  * @param    fractal   The fractal structure.
  * @param    query     The name of the fractal to draw.
  */
-int	draw_fractal(t_fractal *fractal, char *query)
+int	draw_fractal(t_fractal *fractal, char *query, double cx, double cy)
 {
 	fractal->x = 0;
 	fractal->y = 0;
@@ -27,12 +27,12 @@ int	draw_fractal(t_fractal *fractal, char *query)
 	{
 		while (fractal->y < SIZE)
 		{
-			if (ft_strncmp(query, "mandelbrot", 11) == 0)
+			if (ft_strncmp(query, "mandel", 7) == 0)
 				calculate_mandelbrot(fractal);
 			else if (ft_strncmp(query, "julia", 6) == 0)
-				calculate_julia(fractal);
-			// else if (ft_strcmp(query, "burningship") == 0)
-			// 	calculate_burningship(fractal);
+				calculate_julia(fractal, cx, cy);
+			else if (ft_strncmp(query, "ship", 5) == 0)
+				calculate_burning_ship(fractal);
 			else
 			{
 				ft_putendl_fd("Available fractals: mandelbrot, julia, burningship", 1);
@@ -64,7 +64,7 @@ int	main(int argc, char **argv)
 	mlx_key_hook(fractal->window, key_hook, fractal);
 	mlx_mouse_hook(fractal->window, mouse_hook, fractal);
 	mlx_hook(fractal->window, 17, 0L, exit_fractal, fractal);
-	draw_fractal(fractal, argv[1]);
+	draw_fractal(fractal, argv[1], -0.745429, 0.05);
 	mlx_loop(fractal->mlx);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:23 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 13:56:26 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 18:31:26 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@
  * pow(x, 2) function.
  *
  * The exit conditions of the loop are the following:
- * - The absolute value of z is greater than 7, then we can assure
- *   that the suite will diverge to infinity.
+ * - The absolute value of z is greater than the system's max values, then
+ *   we can assure that the suite will diverge to infinity.
  * - The number of iterations is too high, then we can assure that
  *   the suite will stay stuck in an infinite loop.
  *
@@ -43,21 +43,23 @@ void	calculate_mandelbrot(t_fractal *fractal)
 	int		i;
 	double	x_temp;
 
-	fractal->name = "mandelbrot";
+	fractal->name = "mandel";
 	i = 0;
 	fractal->zx = 0.0;
 	fractal->zy = 0.0;
 	fractal->cx = (fractal->x / fractal->zoom) + fractal->offset_x;
 	fractal->cy = (fractal->y / fractal->zoom) + fractal->offset_y;
-	while (fractal->zx * fractal->zx + fractal->zy * fractal->zy < (__DBL_MAX__
-			* __DBL_MAX__) * 2 && ++i < MAX_ITERATIONS)
+	while (++i < fractal->max_iterations)
 	{
 		x_temp = fractal->zx * fractal->zx - fractal->zy * fractal->zy
 			+ fractal->cx;
 		fractal->zy = 2. * fractal->zx * fractal->zy + fractal->cy;
 		fractal->zx = x_temp;
+		if (fractal->zx * fractal->zx + fractal->zy
+			* fractal->zy >= __DBL_MAX__)
+			break ;
 	}
-	if (i == MAX_ITERATIONS)
+	if (i == fractal->max_iterations)
 		put_color_to_pixel(fractal, fractal->x, fractal->y, 0x000000);
 	else
 		put_color_to_pixel(fractal, fractal->x, fractal->y, (fractal->color
