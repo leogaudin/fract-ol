@@ -50,7 +50,7 @@
 * To **execute** the program, use the following command
 
 	```bash
-	./fract-ol <fractal>
+	./fractol <fractal>
 	```
 
 > Available commands: `mandel`, `julia`, `ship`
