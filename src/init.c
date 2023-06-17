@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:32:20 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:54:33 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 14:09:22 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@ void	init_fractal(t_fractal *fractal)
 {
 	fractal->x = 0;
 	fractal->y = 0;
-	fractal->max_iterations = 100;
-	fractal->color = 765;
+	fractal->color = 0xFCBE11;
 	fractal->zoom = 300;
-	fractal->offset_x = -0.5;
+	fractal->offset_x = 0;
 	fractal->offset_y = 0;
 }
 

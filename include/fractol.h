@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:46:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 13:35:03 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 14:09:59 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,20 @@
 
 # define SIZE 700
 # define MAX_ITERATIONS 142
+
+// KEYCODES
+# define ESC 53
+# define UP 126
+# define DOWN 125
+# define LEFT 123
+# define RIGHT 124
+# define R 15
+# define C 8
+# define H 4
+
+// MOUSECODES
+# define SCROLL_UP 4
+# define SCROLL_DOWN 5
 
 typedef struct s_fractal
 {
@@ -27,17 +41,15 @@ typedef struct s_fractal
 	int		endian;
 	int		x;
 	int		y;
-	int		translated_x;
-	int		translated_y;
 	double	zx;
 	double	zy;
 	double	cx;
 	double	cy;
-	int		max_iterations;
 	int		color;
 	double	offset_x;
 	double	offset_y;
 	double	zoom;
+	char	*name;
 }			t_fractal;
 
 # include "libft/libft.h"
@@ -45,8 +57,7 @@ typedef struct s_fractal
 # include <math.h>
 
 // utils.c
-void		translate_coordinates(t_fractal *fractal);
-void		put_color_to_pixel(t_fractal *fractal, int x, int y, int color);
+void		put_color_to_pixel(t_fractal *fractal, int x, int y, int colour);
 
 // init.c
 void		init_fractal(t_fractal *fractal);
@@ -54,5 +65,15 @@ void		init_mlx(t_fractal *fractal);
 
 // mandelbrot.c
 void		calculate_mandelbrot(t_fractal *fractal);
+
+// julia.c
+void		calculate_julia(t_fractal *fractal);
+
+// main.c
+int			draw_fractal(t_fractal *fractal, char *query);
+
+// mouse_and_keys.c
+int			key_hook(int keycode, t_fractal *fractal);
+int			mouse_hook(int mouse_code, int x, int y, t_fractal *fractal);
 
 #endif

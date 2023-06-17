@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:27:23 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/16 14:04:44 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/06/17 13:56:26 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ void	calculate_mandelbrot(t_fractal *fractal)
 	int		i;
 	double	x_temp;
 
+	fractal->name = "mandelbrot";
 	i = 0;
 	fractal->zx = 0.0;
 	fractal->zy = 0.0;
-	fractal->cx = (fractal->translated_x / fractal->zoom) + fractal->offset_x;
-	fractal->cy = (fractal->translated_y / fractal->zoom) + fractal->offset_y;
-	while (fractal->zx * fractal->zx + fractal->zy * fractal->zy < 7.
-		&& ++i < MAX_ITERATIONS)
+	fractal->cx = (fractal->x / fractal->zoom) + fractal->offset_x;
+	fractal->cy = (fractal->y / fractal->zoom) + fractal->offset_y;
+	while (fractal->zx * fractal->zx + fractal->zy * fractal->zy < (__DBL_MAX__
+			* __DBL_MAX__) * 2 && ++i < MAX_ITERATIONS)
 	{
 		x_temp = fractal->zx * fractal->zx - fractal->zy * fractal->zy
 			+ fractal->cx;
@@ -57,8 +58,8 @@ void	calculate_mandelbrot(t_fractal *fractal)
 		fractal->zx = x_temp;
 	}
 	if (i == MAX_ITERATIONS)
-		put_color_to_pixel(fractal->mlx, fractal->x, fractal->y, 0x000);
+		put_color_to_pixel(fractal, fractal->x, fractal->y, 0x000000);
 	else
-		put_color_to_pixel(fractal->mlx, fractal->x, fractal->y, (i
-				* 0xF3420B));
+		put_color_to_pixel(fractal, fractal->x, fractal->y, (fractal->color
+					* i));
 }
