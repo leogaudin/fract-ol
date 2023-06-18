@@ -194,7 +194,7 @@ eye.
 
 |![Burning Ship](assets/burning_ship.webp)|
 |:-------:|
-| $z=abs(z)^2+c$ |
+| $z_{n+1}=abs(z_n)^2+c$ |
 
 ## Resources and Credits
 
