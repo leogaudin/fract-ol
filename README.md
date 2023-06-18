@@ -188,7 +188,7 @@ eye.
 
 |![Julia](assets/julia.webp)|
 |:-------:|
-| $creal = -0.745429$ and $cimaginary = 0.05$ |
+| $c_{real} = -0.745429$ and $c_{imaginary} = 0.05$ |
 
 ### Burning Ship
 
