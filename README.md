@@ -13,7 +13,7 @@
 	</a>
 	<img src="https://img.shields.io/badge/bonus-included-success"/>
 	<br />
-	<img src="https://img.shields.io/badge/-unknown%2F100-important?logo=42&logoColor=fff" />
+	<img src="https://img.shields.io/badge/-125%2F100-success?logo=42&logoColor=fff" />
 </div>
 
 ## 📖 Table of Contents
