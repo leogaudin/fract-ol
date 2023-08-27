@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 13:55:52 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:36:42 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/08/27 15:42:56 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,12 @@
  *
  * @param    fractal
  */
-void	calculate_julia(t_fractal *fractal, double cx, double cy)
+void	calculate_julia(t_fractal *fractal)
 {
 	int		i;
 	double	tmp;
 
 	fractal->name = "julia";
-	fractal->cx = cx;
-	fractal->cy = cy;
 	fractal->zx = fractal->x / fractal->zoom + fractal->offset_x;
 	fractal->zy = fractal->y / fractal->zoom + fractal->offset_y;
 	i = 0;

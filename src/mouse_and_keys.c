@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 18:11:08 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:35:46 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/08/27 15:41:25 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,11 +75,6 @@ void	set_random_julia(double *cx, double *cy)
  */
 int	key_hook(int key_code, t_fractal *fractal)
 {
-	double	cx;
-	double	cy;
-
-	cx = fractal->cx;
-	cy = fractal->cy;
 	if (key_code == ESC)
 		exit(1);
 	else if (key_code == LEFT)
@@ -95,10 +90,10 @@ int	key_hook(int key_code, t_fractal *fractal)
 	else if (key_code == C)
 		fractal->color += (255 * 255 * 255) / 100;
 	else if (key_code == J)
-		set_random_julia(&cx, &cy);
+		set_random_julia(&fractal->cx, &fractal->cx);
 	else if (key_code == M || key_code == P)
 		change_iterations(fractal, key_code);
-	draw_fractal(fractal, fractal->name, cx, cy);
+	draw_fractal(fractal, fractal->name);
 	return (0);
 }
 
@@ -118,6 +113,6 @@ int	mouse_hook(int mouse_code, int x, int y, t_fractal *fractal)
 		zoom(fractal, x, y, 1);
 	else if (mouse_code == SCROLL_DOWN)
 		zoom(fractal, x, y, -1);
-	draw_fractal(fractal, fractal->name, fractal->cx, fractal->cy);
+	draw_fractal(fractal, fractal->name);
 	return (0);
 }

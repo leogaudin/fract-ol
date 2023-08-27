@@ -6,7 +6,7 @@
 /*   By: lgaudin <lgaudin@student.42malaga.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/15 18:46:11 by lgaudin           #+#    #+#             */
-/*   Updated: 2023/06/17 18:37:17 by lgaudin          ###   ########.fr       */
+/*   Updated: 2023/08/27 16:02:22 by lgaudin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 # include "libft/libft.h"
 # include "minilibx/mlx.h"
 # include <math.h>
+# include <pthread.h>
 
 # define SIZE 700
+# define THREAD_WIDTH 7
+# define THREAD_NUMBER 100
 
 // KEYCODES
 # define ESC 53
@@ -73,16 +76,21 @@ void		init_mlx(t_fractal *fractal);
 void		calculate_mandelbrot(t_fractal *fractal);
 
 // julia.c
-void		calculate_julia(t_fractal *fractal, double cx, double cy);
+void		calculate_julia(t_fractal *fractal);
 
 // burning_ship.c
 void		calculate_burning_ship(t_fractal *fractal);
 
 // main.c
-int			draw_fractal(t_fractal *fractal, char *query, double cx, double cy);
+int			draw_fractal(t_fractal *fractal, char *query);
 
 // mouse_and_keys.c
 int			key_hook(int key_code, t_fractal *fractal);
 int			mouse_hook(int mouse_code, int x, int y, t_fractal *fractal);
+
+// draw.c
+void		*draw_mandelbrot(void *fractal_void);
+void		draw_julia(t_fractal *fractal);
+void		draw_burning_ship(t_fractal *fractal);
 
 #endif
